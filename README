@@ -1,0 +1,21 @@
+= Inside out: using MRI as a C library =
+
+STEPS:
+
+1. install fcgi from http://www.fastcgi.com/dist/fcgi.tar.gz :
+./configure && make && sudo make install
+
+2. install passenger + nginx:
+gem install passenger
+rvmsudo passenger-install-nginx-module
+
+3. install spawn-fcgi from http://download.lighttpd.net/spawn-fcgi/releases-1.6.x/spawn-fcgi-1.6.3.tar.bz2
+./configure && make && sudo make install
+
+4. Write a simple program
+
+NOTES:
+
+FastCGI comes in two flavors: fcgi_stdio, fcgiapp
+
+ruby engine can initialize only in the main thread
